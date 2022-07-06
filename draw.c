@@ -26,3 +26,4 @@ void	fill_pixel(t_data *data, int x, int y, int color)
 	dst = data->img_data.addr + (y * data->img_data.line_length + x * (data->img_data.bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
 }
+

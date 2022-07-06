@@ -21,6 +21,15 @@
 # define WIDTH 720
 # define HEIGHT 480
 
+
+typedef struct t_vec3
+{
+  double x;
+  double y;
+  double z;
+}t_vec3;
+
+
 typedef struct s_img_data
 {
 	void	*img;

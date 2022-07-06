@@ -17,3 +17,13 @@ void	print_and_exit(const char *msg)
 	printf("%s\n", msg);
 	exit(1);
 }
+
+void	*xalloc(size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(size);
+	if (!ptr)
+		print_and_exit("ERROR : malloc failed");
+	return (ptr);
+}
