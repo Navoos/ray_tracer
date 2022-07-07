@@ -14,7 +14,7 @@
 
 void	create_img(t_data	*data)
 {
-	data->img_data.img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+	data->img_data.img = mlx_new_image(data->mlx, WIDTH, (int) HEIGHT);
 	data->img_data.addr = mlx_get_data_addr(data->img_data.img, &data->img_data.bits_per_pixel, &data->img_data.line_length,
 			&data->img_data.endian);
 }
@@ -25,5 +25,10 @@ void	fill_pixel(t_data *data, int x, int y, int color)
 
 	dst = data->img_data.addr + (y * data->img_data.line_length + x * (data->img_data.bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
+}
+
+int	create_trgb(int t, int r, int g, int b)
+{
+	return (t << 24 | r << 16 | g << 8 | b);
 }
 

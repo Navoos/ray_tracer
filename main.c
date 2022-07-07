@@ -12,26 +12,6 @@
 
 #include "ray_tracer.h"
 
-
-
-t_vec	get_color(t_vec *ray_dst)
-{
-	t_vec		*unit_direction;
-	t_vec		*res;
-	double	t;
-
-	unit_direction = normalize_vec3(ray_dst);
-	t = unit_direction.y;
-	free(unit_direction);
-	res = calc_first_part(
-
-}
-
-void background(t_data	*data)
-{
-
-}
-
 int	main(void)
 {
 	t_data			data;
@@ -39,7 +19,7 @@ int	main(void)
 	data.mlx = mlx_init();
 	if (!data.mlx)
 		print_and_exit("ERROR : could not load mlx");
-	data.window = mlx_new_window(data.mlx, WIDTH, HEIGHT, "ray tracer");
+	data.window = mlx_new_window(data.mlx, (int) WIDTH, (int)HEIGHT, "ray tracer");
 	if (!data.window)
 		print_and_exit("ERROR : could not create window");
 	create_img(&data);
